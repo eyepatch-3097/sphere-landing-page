@@ -224,6 +224,68 @@ ul {
   opacity: 0.6;
 }
 
+/* ---------- Modal ---------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 17, 44, 0.6);
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 20px 60px rgba(7, 17, 44, 0.35);
+  transform: translateY(16px);
+  transition: transform 0.2s ease;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal.is-open .modal__dialog {
+  transform: translateY(0);
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--navy);
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.modal__iframe {
+  display: block;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {

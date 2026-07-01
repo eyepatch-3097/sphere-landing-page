@@ -30,8 +30,8 @@
     </p>
 
     <div class="hero__actions">
-      <a href="#" class="btn btn--primary">Schedule a call <span class="btn__arrow">&rarr;</span></a>
-      <a href="#" class="btn btn--outline">Explore Sphere <span class="btn__arrow">&rarr;</span></a>
+      <button type="button" class="btn btn--primary" data-modal-open="scheduleModal">Schedule a call <span class="btn__arrow">&rarr;</span></button>
+      <a href="https://ithoughtpms.co.in/sphere" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Explore Sphere <span class="btn__arrow">&rarr;</span></a>
     </div>
 
     <ul class="hero__trust">
@@ -84,6 +84,20 @@
     <span>A portfolio built to endure.</span>
   </p>
 </section>
+
+<div class="modal" id="scheduleModal" aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Schedule a call">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">&times;</button>
+    <iframe
+      class="modal__iframe"
+      aria-label="ithoughtPMS - Book A Call with us"
+      frameborder="0"
+      style="height:500px;width:99%;border:none;"
+      data-src="https://forms.zohopublic.in/ithought/form/ithoughtPMSBookACallwithus/formperma/4AsJ5ypTFbrsPK4pq87m0K9A4alC64KIemDZEsLyehs">
+    </iframe>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
