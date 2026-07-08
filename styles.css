@@ -2289,7 +2289,7 @@ ul {
     position: static;
     order: 2;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 9 / 8;
     object-fit: cover;
     object-position: right center;
   }
