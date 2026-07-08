@@ -2477,46 +2477,7 @@ ul {
   }
 
   .behaviour__ghost {
-    margin-top: 3.5rem;
-  }
-
-  .behaviour__ghost-text {
     display: none;
-  }
-
-  .behaviour__arrow-row {
-    position: static;
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-    background: none;
-    margin-top: 0;
-    margin-right: 0;
-  }
-
-  .behaviour__arrow-line {
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .behaviour__arrow-head {
-    position: static;
-    width: 8px;
-    height: 8px;
-    margin-left: -5px;
-    flex-shrink: 0;
-  }
-
-  .behaviour__arrow-label {
-    position: static;
-    transform: none;
-    margin-left: 1rem;
-    font-size: 1.05rem;
-    letter-spacing: 3px;
   }
 
   .framework {
