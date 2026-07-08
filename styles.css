@@ -2267,6 +2267,19 @@ ul {
   display: block;
 }
 
+/* ---------- Carousel arrows ---------- */
+/* Hidden by default (desktop); shown only inside the mobile media
+   query below, where .framework__grid / .investors__grid become
+   horizontal scroll carousels. */
+
+.carousel {
+  position: relative;
+}
+
+.carousel-arrow {
+  display: none;
+}
+
 /* ---------- Responsive ---------- */
 /* Each section stacks full-width: standalone image first, then its
    copy, then any card grid (single column), then buttons. Desktop
@@ -2531,6 +2544,50 @@ ul {
 
   .framework__arrow {
     display: none;
+  }
+
+  .carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--navy);
+    box-shadow: 0 4px 14px rgba(7, 17, 44, 0.2);
+    z-index: 3;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .carousel-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carousel-arrow--prev {
+    left: 2vw;
+  }
+
+  .carousel-arrow--next {
+    right: 2vw;
+  }
+
+  .carousel-arrow--dark {
+    background: rgba(244, 245, 247, 0.16);
+    color: var(--gold-light);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+  }
+
+  .carousel-arrow.is-disabled {
+    opacity: 0.35;
+    pointer-events: none;
   }
 
   .prediction {

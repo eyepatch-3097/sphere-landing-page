@@ -43,3 +43,49 @@
     }
   });
 })();
+
+// Mobile carousels — click-to-scroll arrows for the framework and
+// investor card carousels, with disabled state at either end.
+(function () {
+  document.querySelectorAll('.carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.carousel__track');
+    const prevBtn = carousel.querySelector('.carousel-arrow--prev');
+    const nextBtn = carousel.querySelector('.carousel-arrow--next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function scrollAmount() {
+      const card = track.firstElementChild;
+      if (!card) return track.clientWidth;
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    // Scroll-snap settles the resting position at the track's left
+    // padding rather than 0, so capture that as the "start" baseline
+    // instead of assuming 0.
+    let minScroll = track.scrollLeft;
+
+    function updateDisabled() {
+      const maxScroll = track.scrollWidth - track.clientWidth - 1;
+      prevBtn.classList.toggle('is-disabled', track.scrollLeft <= minScroll + 1);
+      nextBtn.classList.toggle('is-disabled', track.scrollLeft >= maxScroll);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateDisabled, { passive: true });
+    window.addEventListener('resize', updateDisabled);
+    setTimeout(() => {
+      minScroll = Math.min(minScroll, track.scrollLeft);
+      updateDisabled();
+    }, 100);
+    updateDisabled();
+  });
+})();
