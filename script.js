@@ -43,32 +43,3 @@
     }
   });
 })();
-
-// Mobile scale-to-fit — below 1300px we don't restructure the layout, we
-// shrink the same 1300px-wide desktop composition to fit the viewport so
-// mobile matches the web design exactly (see styles.css "scale-to-fit").
-(function () {
-  const FRAME_WIDTH = 1300;
-  const outer = document.getElementById('scale-outer');
-  const frame = document.getElementById('scale-frame');
-  if (!outer || !frame) return;
-
-  function apply() {
-    const vw = window.innerWidth;
-    if (vw >= FRAME_WIDTH) {
-      frame.classList.remove('is-scaled');
-      frame.style.transform = '';
-      outer.style.height = '';
-      return;
-    }
-    frame.classList.add('is-scaled');
-    const scale = vw / FRAME_WIDTH;
-    frame.style.transform = `scale(${scale})`;
-    outer.style.height = `${frame.offsetHeight * scale}px`;
-  }
-
-  apply();
-  window.addEventListener('resize', apply);
-  window.addEventListener('orientationchange', apply);
-  window.addEventListener('load', apply);
-})();
