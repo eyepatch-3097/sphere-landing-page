@@ -143,6 +143,16 @@ ul {
   color: #fff;
 }
 
+.btn--outline-light {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+
+.btn--outline-light:hover {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
 .btn__arrow {
   transition: transform 0.15s ease;
 }
@@ -296,6 +306,11 @@ ul {
   font-weight: 700;
   line-height: 1.6;
   color: var(--navy);
+}
+
+.story__actions {
+  display: flex;
+  margin-top: 2.2rem;
 }
 
 .story__visual {
@@ -882,6 +897,12 @@ ul {
   color: var(--gold);
 }
 
+.framework__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+
 .framework__footer-label {
   text-align: center;
   font-size: 0.78rem;
@@ -1124,6 +1145,11 @@ ul {
   line-height: 1.65;
   color: rgba(230, 232, 237, 0.75);
   max-width: 520px;
+}
+
+.investors__actions {
+  display: flex;
+  margin-top: 1.8rem;
 }
 
 .investors__goal {
@@ -1504,6 +1530,21 @@ ul {
   font-size: 0.72rem;
   line-height: 1.7;
   color: var(--text-muted);
+}
+
+.performance__footnote-ref {
+  color: inherit;
+  text-decoration: none;
+}
+
+.performance__footnote-ref:hover {
+  text-decoration: underline;
+}
+
+.performance__actions {
+  display: flex;
+  justify-content: center;
+  margin: 2.4rem 0 0;
 }
 
 .performance__values {
@@ -1950,19 +1991,8 @@ ul {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 4vw;
-}
-
-.strategies__disclaimer {
-  font-size: 0.72rem;
-  color: rgba(230, 232, 237, 0.75);
-}
-
-.strategies__footer-logo {
-  height: 34px;
-  width: auto;
-  filter: brightness(0) invert(1);
 }
 
 /* ---------- Insights ---------- */
@@ -2373,6 +2403,11 @@ ul {
     padding: 3rem 6vw 2.5rem;
   }
 
+  .story__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .story__badge {
     display: none;
   }
@@ -2673,6 +2708,11 @@ ul {
     max-width: 100%;
   }
 
+  .investors__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .investors__grid {
     flex-direction: row;
     overflow-x: auto;
@@ -2849,10 +2889,13 @@ ul {
 
   .strategies__footer {
     position: static;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
+    justify-content: center;
     padding: 2rem 6vw;
+  }
+
+  .strategies__footer .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .insights {
